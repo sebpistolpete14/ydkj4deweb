@@ -1,0 +1,26 @@
+{
+  "headers": [
+    {
+      "source": "/(.*).dat",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/x-shockwave-flash"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/lib/gen/(.*).dat",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/x-shockwave-flash"
+        }
+      ]
+    }
+  ]
+}
