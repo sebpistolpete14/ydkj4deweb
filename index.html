@@ -5,6 +5,24 @@
     <title>You Don't Know Jack 4 - Germany - Build 1.00 Web</title>
 </head>
 
+<script>
+    // List the files that the game usually "skips" here
+    const filesToWarmUp = [
+        'engine.swf', 
+        'lib/q/qlist.dat', // Change to actual filenames
+        'lib/gen/genlist.dat' 
+    ];
+
+    filesToWarmUp.forEach(url => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'fetch';
+        link.href = url;
+        document.head.appendChild(link);
+        console.log("Warming up: " + url);
+    });
+</script>
+
 <body>
     <h2>YOU DON'T KNOW JACK 4 IN YOUR WEB BROWSER!</h2>
 <object type="application/x-shockwave-flash" data="engine.swf" width="640" height="480">
@@ -13,6 +31,8 @@
     <param name="quality" value="high" />
     <param name="scale" value="noscale" />
     <param name="wmode" value="window" />
+    <param name="allowNetworking" value="all" />
+    <param name="salign" value="lt" />
 </object>
     <h2>OPTIMAL SETTINGS</h2>
 <p>Here are the recommended settings for the game:</p>
@@ -42,10 +62,6 @@
 
 <p>Alternatives?</p>
 <p>We are aware of the Ruffle project, but it does not work that well with YDKJ 4.</p>
-
-    <p>Other questions:</p>
-    <p>Why use YDKJ 4 DE?</p>
-    <p>We are only using YDKJ 4 DE because the game it is based on, You Don't Know Jack Vol. 6: The Lost Gold is still sold on Steam. YDKJ 4 DE can only be found on archive.org and the usual second-hand markets.</p>
 </body>
 
 </html>
