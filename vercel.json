@@ -1,26 +1,19 @@
 {
-  "headers": [
+  "routes": [
     {
-      "source": "/(.*).dat",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/x-shockwave-flash"
-        },
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
+      "src": "/(.*)\\.dat",
+      "headers": {
+        "content-type": "application/x-shockwave-flash",
+        "cache-control": "public, max-age=31536000, immutable"
+      },
+      "continue": true
     },
     {
-      "source": "/lib/gen/(.*).dat",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/x-shockwave-flash"
-        }
-      ]
+      "src": "/lib/gen/(.*)",
+      "headers": {
+        "content-type": "application/x-shockwave-flash"
+      },
+      "continue": true
     }
   ]
 }
