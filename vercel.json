@@ -1,0 +1,16 @@
+{
+  "headers": [
+    {
+      "source": "/(.*).dat",
+      "headers": [
+        { "key": "Content-Type", "value": "application/x-shockwave-flash" }
+      ]
+    },
+    {
+      "source": "/(.*).xml",
+      "headers": [
+        { "key": "Content-Type", "value": "text/xml; charset=iso-8859-1" }
+      ]
+    }
+  ]
+}
