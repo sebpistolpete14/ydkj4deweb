@@ -15,8 +15,13 @@
       },
       "continue": true
     }
-  ]
-}
+{
+  "source": "/(.*).xml",
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "text/xml; charset=iso-8859-1"
+    }
 {
   "rewrites": [
     {
@@ -25,12 +30,5 @@
     }
   ]
 }
-{
-  "source": "/(.*).xml",
-  "headers": [
-    {
-      "key": "Content-Type",
-      "value": "text/xml; charset=iso-8859-1"
-    }
   ]
 }
