@@ -1,34 +1,36 @@
 {
-  "routes": [
-    {
-      "src": "/(.*)\\.dat",
-      "headers": {
-        "content-type": "application/x-shockwave-flash",
-        "cache-control": "public, max-age=31536000, immutable"
-      },
-      "continue": true
-    },
-    {
-      "src": "/lib/gen/(.*)",
-      "headers": {
-        "content-type": "application/x-shockwave-flash"
-      },
-      "continue": true
-    }
-{
-  "source": "/(.*).xml",
-  "headers": [
-    {
-      "key": "Content-Type",
-      "value": "text/xml; charset=iso-8859-1"
-    }
-{
   "rewrites": [
     {
       "source": "/%2Bmod/:path*",
       "destination": "/lib/mod/:path*"
+    },
+    {
+      "source": "/+mod/:path*",
+      "destination": "/lib/mod/:path*"
     }
-  ]
-}
+  ],
+  "headers": [
+    {
+      "source": "/(.*).dat",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/x-shockwave-flash"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*).xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/xml; charset=iso-8859-1"
+        }
+      ]
+    }
   ]
 }
