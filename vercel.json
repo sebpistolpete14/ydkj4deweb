@@ -17,3 +17,20 @@
     }
   ]
 }
+{
+  "rewrites": [
+    {
+      "source": "/%2Bmod/:path*",
+      "destination": "/lib/mod/:path*"
+    }
+  ]
+}
+{
+  "source": "/(.*).xml",
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "text/xml; charset=iso-8859-1"
+    }
+  ]
+}
